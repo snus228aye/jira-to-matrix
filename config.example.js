@@ -5,7 +5,8 @@ module.exports = Object.freeze({
     lang: 'en',
     pathToDocs: 'https://github.com/mobitel/jira-to-matrix/blob/master/docs',
     // jira params
-    jira: {
+    taskTracker: {
+        type: 'jira',
         // url of your jira
         url: 'https://jira.example.org',
         // jira user name
@@ -49,7 +50,7 @@ module.exports = Object.freeze({
     },
     // redis params
     redis: {
-        host: '127.0.0.1',
+        host: 'bot_redis',
         port: 6379,
         prefix: 'jira-hooks:',
     },
@@ -107,17 +108,6 @@ module.exports = Object.freeze({
     // you must upload it before and get links to set them here
     // Optionally
     colors: {
-        //
-        links: {
-            // This link used when you create room
-            issue: 'mxc://matrix.example/purple',
-            // colors, at least green, yellow, blue-gray must be
-            green: 'mxc://matrix.example/green',
-            yellow: 'mxc://matrix.example/yellow',
-            'blue-gray': 'mxc://matrix.example/blue-gray',
-            // additional is possible according to your custom jira color
-            purple: 'mxc://matrix.example/purple',
-        },
         // Projects to use
         // You can use this action for some projects only
         // if you want to set all - projects: 'all'
@@ -136,8 +126,6 @@ module.exports = Object.freeze({
             lastIssue: ['TEST'],
         },
     },
-    // Optional base directory for saving cloned repos, must exists! By default /tmp
-    baseDir: '/tmp',
     // delay interval for archiving rooms and other high loadly chat server operations
     delayInterval: 5,
     // Optional max file size to upload from messanger, 10 * 1024 * 1024 by default
