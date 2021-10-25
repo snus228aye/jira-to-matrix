@@ -11,8 +11,8 @@ const env = process.env.NODE_ENV || 'development';
 
 const pathDict = {
     test: './test/fixtures/config.ts',
-    development: './config.json',
-    production: './config.json',
+    development: './config.js',
+    production: './config.js',
 };
 
 const configPath = pathDict[env];
