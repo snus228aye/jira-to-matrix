@@ -45,51 +45,30 @@ module.exports = Object.freeze({
     // list of users which will be avoided in inviting to room in matrix
     inviteIgnoreUsers: [],
     testMode: {
-        on: true,
+        on: false,
         users: ['ivan', 'masha'],
     },
     // redis params
     redis: {
-        host: 'bot_redis',
-        port: 6379,
+        host: '127.0.0.1',
+        port: 6378,
         prefix: 'jira-hooks:',
     },
     // Matrix params
     messenger: {
-        // users with admin status
-        admins: ['admin'],
         // messenger name
         name: 'matrix',
         // messenger domain
-        domain: 'matrix.example.org',
+        domain: 'matrix.org',
         // short name, before colomn, without @
-        user: 'bot',
+        user: 'user',
         // password
-        password: 'key',
-        bots: [
-            {
-                user: 'bot2',
-                password: 'key',
-            },
-            {
-                user: 'bot3',
-                password: 'key',
-            },
-        ],
-        // info room
-        // optional
-        infoRoom: {
-            // users that will be in info room
-            // if no field, admins will be added
-            users: ['tt_test1', 'tt_test2'],
-            // room alias in chat
-            name: 'INFO',
-        },
+        password: 'pass',
     },
     // log params based on winston https://github.com/winstonjs/winston
     log: {
         // type of log output
-        type: 'both',
+        type: 'console',
         // path to log file
         filePath: 'logs/service',
         // log level saved in file
