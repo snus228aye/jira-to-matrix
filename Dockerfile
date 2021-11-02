@@ -1,4 +1,4 @@
-FROM node:lts As development
+FROM node:14 As development
 WORKDIR /app
 
 COPY package*.json ./
@@ -9,7 +9,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:lts as production
+FROM node:14 as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
